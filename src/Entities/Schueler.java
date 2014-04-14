@@ -17,7 +17,6 @@ public class Schueler extends Person {
     }
     
     private final String klasse;
-    private int katalogNr;
     
     public String getKlasse(){
         return klasse;

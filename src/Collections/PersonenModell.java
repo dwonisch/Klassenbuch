@@ -34,6 +34,10 @@ public class PersonenModell extends AbstractListModel {
         if(!liste.contains(person)){
             liste.add(person);
             Collections.sort(liste);
+            
+            for(int i=1; i <= liste.size(); i++){
+                liste.get(i).setKatalogNummer(i);
+            }
         }
     }
 }

@@ -22,4 +22,8 @@ public class Lehrer extends Person {
     public String getKurzzeichen(){
         return kurzzeichen;
     }
+
+    @Override
+    public void setKatalogNummer(int nummer){
+    }
 }
