@@ -21,6 +21,7 @@ public abstract class Person implements Comparable<Person> {
     private final String nachname;
     private String name;
     protected int katalogNr;
+    private String id;
 
     
     public String getVorname(){
@@ -37,6 +38,15 @@ public abstract class Person implements Comparable<Person> {
     
     public void setKatalogNummer(int nummer){
         katalogNr = nummer;
+        setId(Integer.toString(katalogNr));
+    }
+    
+    public String getId(){
+        return this.id;
+    }
+    
+    protected void setId(String id) {
+        this.id = id;
     }
 
     @Override

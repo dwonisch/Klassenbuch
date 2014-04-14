@@ -38,10 +38,6 @@ public class SchulGUI extends javax.swing.JFrame {
     private void onAendern(java.awt.event.ActionEvent evt) {                             
         // TODO add your handling code here:
     }
-    
-    private void onSelectPerson(java.awt.event.ActionEvent evt) {                             
-        // TODO add your handling code here:
-    }   
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -108,6 +104,11 @@ public class SchulGUI extends javax.swing.JFrame {
         });
 
         personenAnzeige.setModel(getAktuelleKlasse());
+        personenAnzeige.addListSelectionListener(new javax.swing.event.ListSelectionListener() {
+            public void valueChanged(javax.swing.event.ListSelectionEvent evt) {
+                onSelectPerson(evt);
+            }
+        });
         jScrollPane1.setViewportView(personenAnzeige);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -284,7 +285,7 @@ public class SchulGUI extends javax.swing.JFrame {
     }//GEN-LAST:event_onClear
 
     private void onLoeschen(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_onLoeschen
-        Person person = (Person)personenAnzeige.getSelectedValue();
+        Person person = getAktuellePerson();
         if(person == null)
             return;
         
@@ -293,9 +294,21 @@ public class SchulGUI extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_onLoeschen
 
+    private void onSelectPerson(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_onSelectPerson
+        Person person = getAktuellePerson();
+        
+        vorname.setText(person.getVorname());
+        nachname.setText(person.getNachname());
+        katalognr.setText(person.getId());
+    }//GEN-LAST:event_onSelectPerson
+
     private PersonenModell getAktuelleKlasse(){
         String klasse = klassenAuswahl.getSelectedItem().toString();
         return personenListen.get(klasse);
+    }
+    
+    private Person getAktuellePerson(){
+        return (Person)personenAnzeige.getSelectedValue();
     }
     
     /**

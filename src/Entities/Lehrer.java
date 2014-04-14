@@ -15,6 +15,7 @@ public class Lehrer extends Person {
         super(vorname, nachname);
         
         this.kurzzeichen = kurzzeichen;
+        setId(kurzzeichen);
     }
     
     private final String kurzzeichen;
