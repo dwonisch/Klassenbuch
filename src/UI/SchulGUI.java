@@ -45,15 +45,7 @@ public class SchulGUI extends javax.swing.JFrame {
     private void onAendern(java.awt.event.ActionEvent evt) {                             
         // TODO add your handling code here:
     }
-    
-    private void onSchueler(java.awt.event.ActionEvent evt) {                             
-        // TODO add your handling code here:
-    }
-    
-    private void onLehrer(java.awt.event.ActionEvent evt) {                             
-        // TODO add your handling code here:
-    }
-    
+      
     private void onSelectKlasse(java.awt.event.ActionEvent evt) {                             
         // TODO add your handling code here:
     }
@@ -103,9 +95,19 @@ public class SchulGUI extends javax.swing.JFrame {
         buttonGroup1.add(schuelerSelection);
         schuelerSelection.setSelected(true);
         schuelerSelection.setText("Schüler");
+        schuelerSelection.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                onSchueler(evt);
+            }
+        });
 
         buttonGroup1.add(jRadioButton2);
         jRadioButton2.setText("Lehrer");
+        jRadioButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                onLehrer(evt);
+            }
+        });
 
         jLabel1.setText("Klasse:");
 
@@ -153,6 +155,8 @@ public class SchulGUI extends javax.swing.JFrame {
         jLabel2.setText("Vorname:");
 
         jLabel3.setText("Nachname:");
+
+        katalognr.setEditable(false);
 
         jLabel5.setText("Katalognummer:");
 
@@ -253,6 +257,16 @@ public class SchulGUI extends javax.swing.JFrame {
         
         liste.add(person);
     }//GEN-LAST:event_onEinfuegen
+
+    private void onSchueler(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_onSchueler
+        // TODO add your handling code here:
+        katalognr.setEditable(false);
+    }//GEN-LAST:event_onSchueler
+
+    private void onLehrer(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_onLehrer
+        // TODO add your handling code here:
+        katalognr.setEditable(true);
+    }//GEN-LAST:event_onLehrer
 
     /**
      * @param args the command line arguments
