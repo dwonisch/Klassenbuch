@@ -61,7 +61,7 @@ public class SchulGUI extends javax.swing.JFrame {
         nachname = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         katalognr = new javax.swing.JTextField();
-        jLabel5 = new javax.swing.JLabel();
+        katalogLabel = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
@@ -150,7 +150,7 @@ public class SchulGUI extends javax.swing.JFrame {
 
         katalognr.setEditable(false);
 
-        jLabel5.setText("Katalognummer:");
+        katalogLabel.setText("Katalognummer:");
 
         jButton1.setText("Einfügen");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -196,7 +196,7 @@ public class SchulGUI extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(nachname, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jLabel5)
+                        .addComponent(katalogLabel)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 15, Short.MAX_VALUE)
                         .addComponent(katalognr, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
@@ -222,7 +222,7 @@ public class SchulGUI extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(katalognr, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel5))
+                    .addComponent(katalogLabel))
                 .addGap(18, 18, 18)
                 .addComponent(jButton1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -268,8 +268,10 @@ public class SchulGUI extends javax.swing.JFrame {
     private void onSchueler(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_onSchueler
         // TODO add your handling code here:
         katalognr.setEditable(false);
+        katalogLabel.setText("Katalognummer:");
         klassenAuswahl.setEnabled(true);
         klassenAuswahl.setSelectedItem("2AHIF");
+        
     }//GEN-LAST:event_onSchueler
 
     private void onLehrer(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_onLehrer
@@ -369,13 +371,13 @@ public class SchulGUI extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JRadioButton jRadioButton2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSplitPane jSplitPane1;
     private javax.swing.JTextField jTextField3;
+    private javax.swing.JLabel katalogLabel;
     private javax.swing.JTextField katalognr;
     private javax.swing.JComboBox klassenAuswahl;
     private javax.swing.JTextField nachname;
