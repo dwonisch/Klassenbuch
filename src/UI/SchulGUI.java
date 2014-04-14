@@ -268,6 +268,8 @@ public class SchulGUI extends javax.swing.JFrame {
     private void onSchueler(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_onSchueler
         // TODO add your handling code here:
         katalognr.setEditable(false);
+        klassenAuswahl.setEnabled(true);
+        klassenAuswahl.setSelectedItem("2AHIF");
     }//GEN-LAST:event_onSchueler
 
     private void onLehrer(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_onLehrer
