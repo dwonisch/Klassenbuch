@@ -34,10 +34,6 @@ public class SchulGUI extends javax.swing.JFrame {
         initComponents();
     }
       
-    private void onClear(java.awt.event.ActionEvent evt) {                             
-        // TODO add your handling code here:
-    }
-    
     private void onLoeschen(java.awt.event.ActionEvent evt) {                             
         // TODO add your handling code here:
     }
@@ -174,6 +170,11 @@ public class SchulGUI extends javax.swing.JFrame {
         jButton3.setText("Ändern");
 
         jButton4.setText("Clear");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                onClear(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -273,6 +274,12 @@ public class SchulGUI extends javax.swing.JFrame {
     private void onSelectKlasse(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_onSelectKlasse
         personenAnzeige.setModel(getAktuelleKlasse());
     }//GEN-LAST:event_onSelectKlasse
+
+    private void onClear(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_onClear
+        vorname.setText(null);
+        nachname.setText(null);
+        katalognr.setText(null);
+    }//GEN-LAST:event_onClear
 
     private PersonenModell getAktuelleKlasse(){
         String klasse = klassenAuswahl.getSelectedItem().toString();
