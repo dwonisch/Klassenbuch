@@ -277,6 +277,8 @@ public class SchulGUI extends javax.swing.JFrame {
     private void onLehrer(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_onLehrer
         // TODO add your handling code here:
         katalognr.setEditable(true);
+        klassenAuswahl.setEnabled(false);
+        klassenAuswahl.setSelectedItem("Lehrer");
     }//GEN-LAST:event_onLehrer
 
     private void onSelectKlasse(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_onSelectKlasse
