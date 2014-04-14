@@ -34,10 +34,6 @@ public class SchulGUI extends javax.swing.JFrame {
 
         initComponents();
     }
-    
-    private void onAendern(java.awt.event.ActionEvent evt) {                             
-        // TODO add your handling code here:
-    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -171,6 +167,11 @@ public class SchulGUI extends javax.swing.JFrame {
         });
 
         jButton3.setText("Ändern");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                onAendern(evt);
+            }
+        });
 
         jButton4.setText("Clear");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
@@ -301,6 +302,16 @@ public class SchulGUI extends javax.swing.JFrame {
         nachname.setText(person.getNachname());
         katalognr.setText(person.getId());
     }//GEN-LAST:event_onSelectPerson
+
+    private void onAendern(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_onAendern
+        Person person = getAktuellePerson();
+        if(person != null){
+            person.setVorname(vorname.getText());
+            person.setNachname(nachname.getText());
+            person.setId(katalognr.getText());
+            getAktuelleKlasse().refresh();
+        }
+    }//GEN-LAST:event_onAendern
 
     private PersonenModell getAktuelleKlasse(){
         String klasse = klassenAuswahl.getSelectedItem().toString();

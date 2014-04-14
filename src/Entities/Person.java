@@ -17,8 +17,8 @@ public abstract class Person implements Comparable<Person> {
         setName(vorname, nachname);
     }
     
-    private final String vorname;
-    private final String nachname;
+    private String vorname;
+    private String nachname;
     private String name;
     protected int katalogNr;
     private String id;
@@ -28,8 +28,18 @@ public abstract class Person implements Comparable<Person> {
         return vorname;
     }
     
+    public void setVorname(String vorname){
+        this.vorname = vorname;
+        setName(vorname, nachname);
+    }
+    
     public String getNachname(){
         return nachname;
+    }
+    
+    public void setNachname(String nachname){
+        this.nachname = nachname;
+        setName(vorname, nachname);
     }
     
     private void setName(String vorname, String nachname){
@@ -45,7 +55,7 @@ public abstract class Person implements Comparable<Person> {
         return this.id;
     }
     
-    protected void setId(String id) {
+    public void setId(String id) {
         this.id = id;
     }
 

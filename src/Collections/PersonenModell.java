@@ -44,7 +44,7 @@ public class PersonenModell extends AbstractListModel {
         }
     }
     
-    private void refresh(){
+    public void refresh(){
         Collections.sort(liste);
 
         for(int i=0; i < liste.size(); i++){

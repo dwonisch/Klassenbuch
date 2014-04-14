@@ -14,14 +14,11 @@ public class Lehrer extends Person {
     public Lehrer(String vorname, String nachname, String kurzzeichen){
         super(vorname, nachname);
         
-        this.kurzzeichen = kurzzeichen;
         setId(kurzzeichen);
     }
     
-    private final String kurzzeichen;
-    
     public String getKurzzeichen(){
-        return kurzzeichen;
+        return getId();
     }
 
     @Override
