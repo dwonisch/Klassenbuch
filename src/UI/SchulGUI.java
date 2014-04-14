@@ -279,6 +279,7 @@ public class SchulGUI extends javax.swing.JFrame {
         katalognr.setEditable(true);
         klassenAuswahl.setEnabled(false);
         klassenAuswahl.setSelectedItem("Lehrer");
+        katalogLabel.setText("Kurzzeichen:");
     }//GEN-LAST:event_onLehrer
 
     private void onSelectKlasse(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_onSelectKlasse
