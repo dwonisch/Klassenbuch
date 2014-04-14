@@ -45,10 +45,6 @@ public class SchulGUI extends javax.swing.JFrame {
     private void onAendern(java.awt.event.ActionEvent evt) {                             
         // TODO add your handling code here:
     }
-      
-    private void onSelectKlasse(java.awt.event.ActionEvent evt) {                             
-        // TODO add your handling code here:
-    }
     
     private void onSelectPerson(java.awt.event.ActionEvent evt) {                             
         // TODO add your handling code here:
@@ -73,7 +69,7 @@ public class SchulGUI extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         klassenAuswahl = new javax.swing.JComboBox();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jList1 = new javax.swing.JList();
+        personenAnzeige = new javax.swing.JList();
         jPanel2 = new javax.swing.JPanel();
         vorname = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
@@ -112,8 +108,14 @@ public class SchulGUI extends javax.swing.JFrame {
         jLabel1.setText("Klasse:");
 
         klassenAuswahl.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "2AHIF", "2BHIF", "2CHIF", "Lehrer" }));
+        klassenAuswahl.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                onSelectKlasse(evt);
+            }
+        });
 
-        jScrollPane1.setViewportView(jList1);
+        personenAnzeige.setModel(getAktuelleKlasse());
+        jScrollPane1.setViewportView(personenAnzeige);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -268,6 +270,15 @@ public class SchulGUI extends javax.swing.JFrame {
         katalognr.setEditable(true);
     }//GEN-LAST:event_onLehrer
 
+    private void onSelectKlasse(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_onSelectKlasse
+        personenAnzeige.setModel(getAktuelleKlasse());
+    }//GEN-LAST:event_onSelectKlasse
+
+    private PersonenModell getAktuelleKlasse(){
+        String klasse = klassenAuswahl.getSelectedItem().toString();
+        return personenListen.get(klasse);
+    }
+    
     /**
      * @param args the command line arguments
      */
@@ -314,7 +325,6 @@ public class SchulGUI extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JList jList1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JRadioButton jRadioButton2;
@@ -324,6 +334,7 @@ public class SchulGUI extends javax.swing.JFrame {
     private javax.swing.JTextField katalognr;
     private javax.swing.JComboBox klassenAuswahl;
     private javax.swing.JTextField nachname;
+    private javax.swing.JList personenAnzeige;
     private javax.swing.JRadioButton schuelerSelection;
     private javax.swing.JTextField vorname;
     // End of variables declaration//GEN-END:variables
