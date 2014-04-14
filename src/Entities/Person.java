@@ -10,14 +10,16 @@ package Entities;
  *
  * @author Daniel
  */
-public class Person {
+public class Person implements Comparable<Person> {
     public Person(String vorname, String nachname){
         this.vorname = vorname;
         this.nachname = nachname;
+        setName(vorname, nachname);
     }
     
     private final String vorname;
     private final String nachname;
+    private String name;
     
     public String getVorname(){
         return vorname;
@@ -25,5 +27,14 @@ public class Person {
     
     public String getNachname(){
         return nachname;
+    }
+    
+    private void setName(String vorname, String nachname){
+        name = String.format("%s %s", nachname, vorname);
+    }
+
+    @Override
+    public int compareTo(Person o) {
+        return name.compareTo(o.name);
     }
 }

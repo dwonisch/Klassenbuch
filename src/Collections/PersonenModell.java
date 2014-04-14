@@ -7,7 +7,9 @@
 package Collections;
 
 import Entities.Person;
+import java.util.Collections;
 import java.util.LinkedList;
+import java.util.List;
 import javax.swing.AbstractListModel;
 
 /**
@@ -16,7 +18,7 @@ import javax.swing.AbstractListModel;
  */
 public class PersonenModell extends AbstractListModel {
     
-    private final LinkedList<Person> liste = new LinkedList<>();
+    private List<Person> liste = new LinkedList<>();
     
     @Override
     public int getSize() {
@@ -31,6 +33,7 @@ public class PersonenModell extends AbstractListModel {
     public void add(Person person){
         if(!liste.contains(person)){
             liste.add(person);
+            Collections.sort(liste);
         }
     }
 }
