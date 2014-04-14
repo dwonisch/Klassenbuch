@@ -33,12 +33,23 @@ public class PersonenModell extends AbstractListModel {
     public void add(Person person){
         if(!liste.contains(person)){
             liste.add(person);
-            Collections.sort(liste);
-            
-            for(int i=0; i < liste.size(); i++){
-                liste.get(i).setKatalogNummer(i+1);
-            }
-            super.fireContentsChanged(liste, 0, liste.size());
+            refresh();
         }
+    }
+    
+    public void remove(Person person){
+        if(liste.contains(person)) {
+            liste.remove(person);
+            refresh();         
+        }
+    }
+    
+    private void refresh(){
+        Collections.sort(liste);
+
+        for(int i=0; i < liste.size(); i++){
+            liste.get(i).setKatalogNummer(i+1);
+        }
+        super.fireContentsChanged(liste, 0, liste.size());
     }
 }

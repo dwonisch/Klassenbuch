@@ -33,10 +33,6 @@ public class SchulGUI extends javax.swing.JFrame {
 
         initComponents();
     }
-      
-    private void onLoeschen(java.awt.event.ActionEvent evt) {                             
-        // TODO add your handling code here:
-    }
     
     private void onAendern(java.awt.event.ActionEvent evt) {                             
         // TODO add your handling code here:
@@ -166,6 +162,11 @@ public class SchulGUI extends javax.swing.JFrame {
         });
 
         jButton2.setText("Löschen");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                onLoeschen(evt);
+            }
+        });
 
         jButton3.setText("Ändern");
 
@@ -280,6 +281,11 @@ public class SchulGUI extends javax.swing.JFrame {
         nachname.setText(null);
         katalognr.setText(null);
     }//GEN-LAST:event_onClear
+
+    private void onLoeschen(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_onLoeschen
+        Person person = (Person)personenAnzeige.getSelectedValue();
+        getAktuelleKlasse().remove(person);
+    }//GEN-LAST:event_onLoeschen
 
     private PersonenModell getAktuelleKlasse(){
         String klasse = klassenAuswahl.getSelectedItem().toString();
