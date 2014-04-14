@@ -6,16 +6,28 @@
 
 package UI;
 
+import Collections.PersonenModell;
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  *
  * @author Daniel
  */
 public class SchulGUI extends javax.swing.JFrame {
 
+    private final Map<String, PersonenModell> personenListen;
+    
     /**
      * Creates new form SchulGUI
      */
     public SchulGUI() {
+        this.personenListen = new HashMap<>();
+        this.personenListen.put("2AHIF", new PersonenModell());        
+        this.personenListen.put("2BHIF", new PersonenModell());
+        this.personenListen.put("2CHIF", new PersonenModell());        
+        this.personenListen.put("Lehrer", new PersonenModell());
+
         initComponents();
     }
     
