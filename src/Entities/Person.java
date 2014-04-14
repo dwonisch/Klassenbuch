@@ -43,4 +43,9 @@ public abstract class Person implements Comparable<Person> {
     public int compareTo(Person o) {
         return name.compareTo(o.name);
     }
+    
+    @Override
+    public String toString(){
+        return String.format("%s %s", getVorname(), getNachname());
+    }
 }

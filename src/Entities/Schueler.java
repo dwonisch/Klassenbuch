@@ -29,4 +29,9 @@ public class Schueler extends Person {
     public void setKatalogNr(int katalogNr){
         this.katalogNr = katalogNr;
     }
+    
+    @Override
+    public String toString(){
+        return String.format("%d - %s %s", getKatalogNr(), getVorname(), getNachname());
+    }
 }
