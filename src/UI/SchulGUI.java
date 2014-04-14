@@ -12,6 +12,7 @@ import Entities.Person;
 import Entities.Schueler;
 import java.util.HashMap;
 import java.util.Map;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -284,7 +285,12 @@ public class SchulGUI extends javax.swing.JFrame {
 
     private void onLoeschen(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_onLoeschen
         Person person = (Person)personenAnzeige.getSelectedValue();
-        getAktuelleKlasse().remove(person);
+        if(person == null)
+            return;
+        
+        if(JOptionPane.showConfirmDialog(this, String.format("Möchten Sie '%s' wirklich löschen?", person)) == JOptionPane.OK_OPTION) {
+            getAktuelleKlasse().remove(person);
+        }
     }//GEN-LAST:event_onLoeschen
 
     private PersonenModell getAktuelleKlasse(){
