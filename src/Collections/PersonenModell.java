@@ -28,4 +28,9 @@ public class PersonenModell extends AbstractListModel {
         return liste.get(index);
     }
     
+    public void add(Person person){
+        if(!liste.contains(person)){
+            liste.add(person);
+        }
+    }
 }
